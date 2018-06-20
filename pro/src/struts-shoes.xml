@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    
+    <package name="shoesPkg" namespace="/shoes" extends="basePkg">
+      
+        <default-action-ref name="frontShoes"></default-action-ref>
+    
+        <action name="*" class="com.huanglin.pro.action.ShoesAction" method="{1}">
+            
+            <result name="list_shoes">/jsp/shoes/list_shoes.jsp</result>
+            <result name="add_shoes" type="redirectAction">listShoes</result>
+            <result name="deleteshoes" type="redirectAction">listShoes</result>
+            <result name="findShoes">/jsp/shoes/list_shoes.jsp</result>
+            <result name="update_page">/jsp/shoes/update_shoes.jsp</result>
+            <result name="update" type="redirectAction">listShoes</result>
+            <result name="shoedetial">/jsp/front/buyshoes.jsp</result>
+            <result name="showshoes"> /jsp/front/front_index.jsp</result>
+            <result name="orderdels"> /jsp/front/order_del.jsp</result>
+            <result name="orderlist" type="redirectAction"> showOrdeList </result>
+            <result name="showorderlist">/jsp/front/oredr_list.jsp</result>
+            <result name="rsingin"> /jsp/reuser_login.jsp</result>
+            <result name="search" type="redirectAction">frontShoes</result>
+ 
+        </action>
+        
+        
+    </package>
+
+</struts>
+

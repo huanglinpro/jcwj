@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    
+    <package name="noticePkg" namespace="/notice" extends="basePkg">
+        
+        <action name="*" class="com.huanglin.pro.action.NoticeAction" method="{1}">
+           <result name="add_notice" type="redirectAction">ShoeAllNotice</result>
+           <result name="show_notice">/jsp/notice/list_notice.jsp</result>
+           <result name="show_all_notice">/jsp/notice/list_notice.jsp</result>
+           <result name="del_notice" type="redirectAction">ShoeAllNotice</result>
+           <result name="update_not_page">/jsp/notice/update_notice.jsp</result>
+           <result name="upda_notice" type="redirectAction">ShoeAllNotice</result>
+        </action>
+        
+    </package>
+
+</struts>
+

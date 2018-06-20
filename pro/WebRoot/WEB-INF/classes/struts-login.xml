@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    
+    <package name="admloginPkg" namespace="/login" extends="shoesPkg">
+        
+        <action name="*" class="com.huanglin.pro.action.LoginAction" method="{1}">
+            
+            <result name="login_sus">/index_b.jsp</result>
+            <result name="login_fal">/jsp/adm_login.jsp</result>
+            <result name="user_log_sus" >/jsp/front/front_index.jsp</result>
+            <result name="back">/jsp/user_login.jsp</result>
+            <result name="inpage">/jsp/front/front_index.jsp</result>
+           	<result name="userlogout">/jsp/front/front_index.jsp</result>
+           
+        </action>
+        
+    </package>
+
+</struts>
+

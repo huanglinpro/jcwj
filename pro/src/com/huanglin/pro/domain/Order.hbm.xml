@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huanglin.pro.domain">
+
+   <class name="Order" table="tbl_order">
+       <id name="orId" column="o_id" type="java.lang.Integer" length="6">
+         <generator class="identity"></generator>
+       </id>
+       <property name="orName"          column="o_name"     type="java.lang.String"  length="20" not-null="true"></property>   
+       <property name="orNumber"        column="o_number"   type="java.lang.Integer" length="20" not-null="true"></property>   
+       <property name="orDatetime"      column="o_date"     type="date"      length="50" not-null="false"></property>   
+       <property name="orprice"         column="os_price"   type="double"    length="30" not-null="true"></property>   
+       <property name="orPayState"      column="o_paystate"     type="char"  length="30" not-null="true"></property>   
+       <property name="orreceiverState" column="o_recceverstat" type="char"  length="30" not-null="true"></property>   
+       <property name="orUrl"           column="os_url"    type="java.lang.String" length="30" not-null="true"></property>
+       <property name="orcolor"         column="os_color"  type="java.lang.String" length="30" not-null="false"></property>
+       <property name="orsize"          column="os_size"   type="java.lang.Integer" length="6" not-null="true"></property>
+       <property name="orState"        column="or_state"  type="char" length="2"   not-null="true"></property>
+       
+   <!--
+       <property name="fkUser"          column="fk_user"   type="int" length="6" not-null="true"></property>
+       <property name="fkReceiver"      column="fk_receiver"   type="int" length="6" not-null="true"></property>
+    -->
+          
+       <many-to-one name="user"     class="com.huanglin.pro.domain.User" column="fk_user" lazy="false" fetch="join"></many-to-one>
+       <many-to-one name="receiver" class="com.huanglin.pro.domain.Receiver" column="fk_receiver" unique="true"></many-to-one>
+
+   </class>
+
+</hibernate-mapping>

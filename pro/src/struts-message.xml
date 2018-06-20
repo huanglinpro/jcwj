@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    
+    <package name="mesagePKG" namespace="/mes" extends="basePkg">
+        
+        <action name="*" class="com.huanglin.pro.action.MessageAction" method="{1}">
+            
+            <result name="listall">/jsp/mesage/list_message.jsp</result>
+            <result name="listallun">/jsp/mesage/list_unmessage.jsp</result>
+            <result name="uppage"> /jsp/mesage/updat_mees.jsp</result>
+            <result name="updatemes" type="redirectAction">listMessage</result>
+            <result name="delmes" type="redirectAction">listMessage</result>
+            
+        </action>
+        
+    </package>
+
+</struts>
+

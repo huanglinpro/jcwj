@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <!-- 常量对struts2框架的一些全局属性进行设置 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"/>    
+    <constant name="struts.i18n.encoding" value="UTF-8"/>      
+
+    <package name="basePkg" abstract="true" extends="struts-default">
+    	
+    	
+        <global-allowed-methods>regex:.*</global-allowed-methods>  
+    </package>
+ 
+    <package name="user" namespace="/user" extends="basePkg">
+        
+        <action name="listUser" class="com.huanglin.pro.action.UserAction" method="listUser">
+           <result name="list_user">/jsp/user/user_info.jsp</result>
+        </action>   
+        
+        <action name="addUser" class="com.huanglin.pro.action.UserAction" method="addUser">
+        	<result name="add_user" >/jsp/front/front_index.jsp</result>
+        </action>    
+        
+        <action name="deleteUser" class="com.huanglin.pro.action.UserAction" method="deleteUser">
+        	<result name="deleteuser" type="redirectAction" >listUser</result>
+        </action>  
+        
+        <action name="updateUser" class="com.huanglin.pro.action.UserAction" method="updateUser">
+        	<result name="updateuser" >/jsp/user/update_user.jsp</result>
+        </action>
+        
+		 <action name="updateInfo" class="com.huanglin.pro.action.UserAction" method="updateInfo">
+        		<result name="updateinfo" type="redirectAction">listUser</result>
+        </action>       
+               
+    </package>
+   
+    <include file="struts-adm.xml"></include>
+    <include file="struts-shoes.xml"></include>
+   	<include file="struts-login.xml"></include>
+   	<include file="struts-notice.xml"></include>
+   	<include file="struts-order.xml"></include>
+   	<include file="struts-message.xml"></include>
+   	<include file="struts-user.xml"></include>
+
+</struts>
+

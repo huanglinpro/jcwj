@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huanglin.pro.domain">
+
+   <class name="Notice" table="notice">
+       <id name="id" column="id" type="java.lang.Integer" length="6">
+      
+       </id>
+       <property name="title"   column="n_title"     type="java.lang.String" length="100" not-null="false"></property>   
+       <property name="info"    column="n_info"      type="java.lang.String" length="300" not-null="false"></property>   
+       <property name="ndate"    column="n_date"     type="date"  not-null="false"></property>   
+   </class>
+
+</hibernate-mapping>

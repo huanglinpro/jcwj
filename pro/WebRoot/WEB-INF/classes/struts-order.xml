@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    
+    <package name="orderPkg" namespace="/order" extends="basePkg">
+        
+        <action name="*" class="com.huanglin.pro.action.OrderAction" method="{1}">
+            
+            <result name="addorder"> /jsp/front/oredr_list.jsp</result>
+            <result name="signin" type="redirectAction">listAllOrder</result>
+            <result name="listorder">/jsp/front/oredr_list.jsp</result>
+            <result name="cancle" type="redirectAction">listAllOrder</result>
+            
+        </action>
+        
+    </package>
+
+</struts>
+

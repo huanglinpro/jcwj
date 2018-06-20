@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huanglin.pro.domain">
+
+   <class name="Car" table="tbl_cars">
+       <id name="cId" column="c_id" type="java.lang.Integer" length="6">
+         <generator class="assigned"></generator>
+       </id>
+       <property name="cName"   column="c_s_name"     type="java.lang.String" length="100" not-null="true"></property>   
+       <property name="cUrl"    column="c_s_url"      type="java.lang.String" length="100" not-null="true"></property>   
+       <property name="cColor"  column="c_s_color"    type="java.lang.String" length="10" not-null="true"></property>   
+       <property name="cStyle"  column="c_s_style"    type="java.lang.String" length="10" not-null="true"></property>   
+       <property name="cNumb"   column="c_s_number"   type="java.lang.Integer" length="4" not-null="true"></property>   
+       <property name="cPrice"  column="c_s_price"    type="double" length="4" not-null="false"></property>   
+       <property name="cSize"   column="c_s_size"     type="double" length="4" not-null="false"></property>   
+       <many-to-one name="user" class="com.huanglin.pro.domain.User" column="c_fk_user" lazy="false" fetch="join"></many-to-one> 
+   </class>
+
+</hibernate-mapping>

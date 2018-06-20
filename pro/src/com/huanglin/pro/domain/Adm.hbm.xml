@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huanglin.pro.domain">
+
+   <class name="Adm" table="adm_info">
+       <id name="admId" column="id" type="java.lang.Integer" length="6">
+         <generator class="assigned"></generator>
+       </id>
+       <property name="admName"      column="adm_name" 		type="java.lang.String" length="20" not-null="true"></property>   
+       <property name="admRealName"  column="adm_real_name" type="java.lang.String" length="20" not-null="true"></property>   
+       <property name="admPhone"     column="adm_phone"     type="java.lang.String" length="15" not-null="true"></property>   
+       <property name="admPress"     column="adm_pass"      type="java.lang.String" length="15" not-null="true"></property>   
+       <property name="admEmail"     column="adm_email"     type="java.lang.String" length="30" not-null="false"></property>   
+   </class>
+
+</hibernate-mapping>

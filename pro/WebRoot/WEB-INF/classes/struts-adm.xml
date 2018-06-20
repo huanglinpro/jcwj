@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    
+    <package name="admPkg" namespace="/adm" extends="basePkg">
+        
+        <action name="*" class="com.huanglin.pro.action.AdmAction" method="{1}">
+            
+            <result name="findbyname">/jsp/adm/adm_info.jsp </result>
+            <result name="uppress">/jsp/adm/adm_press.jsp</result>
+            <result name="updatePassInfo">/jsp/adm/pass_success.jsp</result>
+            <result name="backhome">/index_b.jsp</result>
+            <result name="updateuser">/jsp/adm/update_adm.jsp</result>
+            
+        </action>
+        
+    </package>
+
+</struts>
+

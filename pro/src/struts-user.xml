@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    
+    <package name="userPkg" namespace="/user" extends="basePkg">
+      
+
+    
+        <action name="*" class="com.huanglin.pro.action.UserAction" method="{1}">
+           <result name="listback">/jsp/user/list_user.jsp</result>
+           <result name="finduser">/jsp/user/findlist_user.jsp</result>
+           <result name="listunback">/jsp/user/list_unuser.jsp</result>
+           <result name="bkuppage">/jsp/user/bkupdate_user.jsp</result>
+           <result name="fixpow" type="redirectAction">listUnBack</result>
+           
+           <result name="fixright" type="redirectAction">listBack</result>
+           <result name="fixbkuppage">/jsp/user/fix_right_update_user.jsp</result>
+           <result name="finUNRight" type="redirectAction">listUnBack</result>
+		
+        </action>
+        
+        
+    </package>
+
+</struts>
+

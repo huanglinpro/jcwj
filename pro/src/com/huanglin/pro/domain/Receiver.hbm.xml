@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huanglin.pro.domain">
+
+   <class name="Receiver" table="tbl_receiver">
+   
+       <id name="rId" column="r_id" type="java.lang.Integer" length="6">
+         <generator class="assigned"></generator>
+       </id>
+       <property name="rName"     column="r_name"    type="java.lang.String" length="10"  not-null="false"></property>   
+       <property name="rAdderss"  column="r_address" type="java.lang.String" length="300" not-null="false"></property>   
+       <property name="rEmail"    column="r_email"   type="java.lang.String" length="30" not-null="false"></property>   
+       <property name="rPhone"    column="r_phone"   type="java.lang.String" length="20" not-null="false"></property>   
+       <property name="rPost"     column="r_post"    type="java.lang.String" length="15" not-null="false"></property>
+       <one-to-one name="order"   class="Order"  property-ref="receiver"  cascade="all" constrained="false"></one-to-one>
+      
+   </class>
+
+</hibernate-mapping>

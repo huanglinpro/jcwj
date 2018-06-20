@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huanglin.pro.domain">
+
+   <class name="User" table="user_info">
+       <id name="userId" column="u_id" type="java.lang.Integer">
+         <generator class="assigned"></generator>
+       </id>
+       <property name="userName"      column="u_name"      type="java.lang.String" length="20" not-null="true"></property>   
+       <property name="userRealName"  column="u_real_name" type="java.lang.String" length="20" not-null="true"></property>   
+       <property name="singnPress"    column="u_pass"      type="java.lang.String" length="10" not-null="true"></property>   
+       <property name="userPhone"     column="u_phone"     type="java.lang.String" length="100" not-null="true"></property>   
+       <property name="userAddress"   column="u_address"   type="java.lang.String" length="4" not-null="false"></property>   
+       <property name="userPow"       column="u_power"     type="char" length="1"  not-null="false"></property>
+       <property name="userDate"      column="add_u_time"  type="java.util.Date"   not-null="false"></property>
+       <property name="payPass"       column="paypass"  type="java.lang.String"  length="10" not-null="false"></property>
+    <!--    
+	   <set name="cart" table="tbl_cars"  inverse="false">
+	         <key>
+	        	<column name="c_fk_user" not-null="true"></column>
+	         </key>
+	         <one-to-many class="Car" />
+	    </set>  
+	    
+	     <set name="order" table="tbl_order"  inverse="false">
+	         <key>
+	        	<column name="fk_user" not-null="false"></column>
+	         </key>
+	         <one-to-many class="Order" />
+	     </set> 
+	     -->
+ 	</class>
+
+</hibernate-mapping>

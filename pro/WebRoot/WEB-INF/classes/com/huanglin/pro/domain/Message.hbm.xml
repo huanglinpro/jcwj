@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.huanglin.pro.domain">
+
+   <class name="Message" table="tbl_message">
+       <id name="mId" column="m_id" type="java.lang.Integer" length="6">
+      	<generator class="identity"></generator>
+       </id>
+       <property name="mWDate"    column="m_write_date"     type="date" length="100" not-null="false"></property>   
+       <property name="mRDate"    column="m_repet_date"     type="date" length="300" not-null="false"></property>   
+       <property name="mWName"    column="m_write_name"     type="string" length="300" not-null="false"></property>   
+       <property name="mRName"    column="m_repet_name"     type="string" length="300"  not-null="false"></property>   
+       <property name="mWInfo"    column="m_write_info"     type="string" length="300" not-null="false"></property>   
+       <property name="mRInfo"    column="m_repet_info"     type="string" length="300" not-null="false"></property>   
+       <property name="mState"    column="m_state"          type="char"   length="300" not-null="false"></property>   
+ 
+   </class>
+
+</hibernate-mapping>
